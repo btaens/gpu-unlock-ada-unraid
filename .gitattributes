@@ -42,3 +42,8 @@
 
 # Preserve exact native RTX 4070 evidence bytes across platforms.
 /docs/evidence/ada2786/* -text
+
+# Unraid build scripts must keep LF in Git and archives.
+/unraid -export-ignore
+/unraid/** -export-ignore
+/unraid/*.sh text eol=lf

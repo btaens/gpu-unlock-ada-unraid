@@ -1,4 +1,12 @@
-# GPU unlock 1.1.1 — RTX 4090 and experimental Ada GPUs
+# GPU unlock — experimental Unraid integration
+
+This fork adds [Unraid build and early-boot installation scripts](unraid/README.md)
+to [JustAResearcher/gpu-unlock-ada](https://github.com/JustAResearcher/gpu-unlock-ada). Credit for the GPU
+unlock and firmware work belongs to the upstream project; It naively implements the work of [ampersandru/gpu-unlock-unraid](https://github.com/ampersandru/gpu-unlock-unraid) onto the ADA implementation of gpu-unlock. this fork adds host
+integration and does not introduce a different unlock algorithm.
+
+
+# Upstream GPU unlock 1.1.1 — RTX 4090 and experimental Ada GPUs
 
 New to this project? Start with the [copy-paste Quick Start](QUICKSTART.md).
 

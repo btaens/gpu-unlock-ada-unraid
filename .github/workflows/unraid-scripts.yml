@@ -1,0 +1,19 @@
+name: Unraid script checks
+on:
+  push:
+    paths: ['unraid/**', '.github/workflows/unraid-scripts.yml']
+  pull_request:
+    paths: ['unraid/**', '.github/workflows/unraid-scripts.yml']
+permissions:
+  contents: read
+jobs:
+  shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for f in unraid/build.sh unraid/install.sh; do bash -n "$f"; done
+          for f in unraid/pre-nvidia.sh unraid/disable.sh unraid/status.sh; do sh -n "$f"; done
+          shellcheck -S warning unraid/*.sh
+          python3 -m py_compile unraid/benchmark.py
+      - run: python3 -m unittest discover -s tests -v
